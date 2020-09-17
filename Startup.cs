@@ -26,6 +26,10 @@ namespace apiversioningdemo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddApiVersioning(options => { 
+                options.AssumeDefaultVersionWhenUnspecified = true; 
+                options.ReportApiVersions = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
